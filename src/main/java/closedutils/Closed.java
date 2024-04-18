@@ -107,10 +107,12 @@ public sealed class Closed<T extends Comparable<T>> {
                 (l, r) -> String.format("[%s,%s]", l, r));
     }
 
-    public static final class Empty<T extends Comparable<T>> extends Closed<T> { }
+    public static final class Empty<T extends Comparable<T>> extends Closed<T> {
+        private Empty() {}
+    }
 
     public static final class Interval<T extends Comparable<T>> extends Closed<T> {
         private final T l, r;
-        public Interval(T l, T r) { this.l = l; this.r = r; }
+        private Interval(T l, T r) { this.l = l; this.r = r; }
     }
 }

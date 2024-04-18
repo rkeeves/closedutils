@@ -18,7 +18,7 @@ class UsageExampleTest {
     enum Day { Dawn, Morning, Forenoon, Noon, Afternoon, Evening, Night }
     record Person(String name, Closed<Day> availability) {}
 
-    static final Stream<Person> people() {
+    static Stream<Person> people() {
         return Stream.of(
                 new Person("Ann", closed(Day.Dawn, Day.Noon)),
                 new Person("Bob", closed(Day.Morning, Day.Evening)),
